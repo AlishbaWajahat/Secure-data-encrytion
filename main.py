@@ -83,7 +83,7 @@ elif choice=="Store Data":
         user_data=st.text_input("Enter Data:")
         passkey=st.text_input("Passkey:", type="password")
         if user_data and passkey:
-            user_salt=stored_data[st.session_state.authenticated_user]['salt']
+            user_salt=stored_data[st.session_state.authenticated_user]["salt"]
             encryted_data=encrypt_data(user_data,passkey,user_salt)
             stored_data[st.session_state.authenticated_user]['data'].append(encryted_data)
             save_data(stored_data)
